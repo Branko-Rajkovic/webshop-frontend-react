@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { CardsContext } from "../store/cardsContext";
-import Header from "../components/Header";
+import { CartContext } from "../store/cartContext";
+import Header from "../components/headersAndNavigation/Header";
 
 export default function Payment() {
-  const { items } = useContext(CardsContext);
-  console.log("payment", items);
+  const { items } = useContext(CartContext);
+
   const total = items.reduce((sum, item) => sum + item.price, 0).toFixed(2);
 
   return (
@@ -106,7 +106,7 @@ export default function Payment() {
             </div>
             <button
               type="submit"
-              className="w-full py-2 text-white transition bg-green-400 rounded-2xl hover:bg-green-300"
+              className="px-4 py-1 mx-4 text-xl italic font-semibold text-white transition bg-green-400 float-end rounded-xl hover:bg-green-300"
             >
               Pay Now
             </button>

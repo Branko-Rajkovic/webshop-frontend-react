@@ -1,10 +1,11 @@
-import Header from "../components/Header.jsx";
+import Header from "../components/headersAndNavigation/Header.jsx";
 import Shop from "../components/Shop.jsx";
-import { DUMMY_PRODUCTS } from "../dummy-products.js";
 import Product from "../components/Product.jsx";
 import { motion } from "framer-motion";
+import useFetchData from "../hooks/useFetchData.js";
 
 export default function Home() {
+  const { data, error } = useFetchData("https://fakestoreapi.com/products/");
   return (
     <motion.div
       transition={{ duration: 0.3, delay: 0.5, ease: "linear" }}
@@ -14,7 +15,7 @@ export default function Home() {
     >
       <Header />
       <Shop>
-        {DUMMY_PRODUCTS.map((product) => (
+        {data.map((product) => (
           <li key={product.id}>
             <Product {...product} />
           </li>

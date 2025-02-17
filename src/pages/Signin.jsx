@@ -24,8 +24,8 @@ export default function Signin() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <NavLink to=".." className="mb-4 text-blue-500 hover:underline">
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <NavLink to=".." className="mb-4 text-sky-200 hover:underline">
         ← Back to Previous Page
       </NavLink>
       <div className="p-6 shadow-lg bg-slate-500 rounded-2xl w-96">

@@ -5,10 +5,11 @@ import About from "./pages/About";
 import PageNotFound from "./pages/PageNotFound";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import Checkout from "./pages/Checkout";
 import Signin from "./pages/Signin";
 import Payment from "./pages/Payment";
 import Login from "./pages/Login";
+import AdminItems from "./pages/AdminItems";
+import AdminUsers from "./pages/AdminUsers";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
@@ -18,10 +19,11 @@ export default function AnimatedRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/admin-items" element={<AdminItems />} />
+          <Route path="/admin-users" element={<AdminUsers />} />
 
           <Route index element={<Home />} />
           <Route path="/:id" element={<Product />} />

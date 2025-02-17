@@ -1,13 +1,13 @@
 import { useContext, useRef } from "react";
 
-import CartModal from "./CartModal.jsx";
-import { CardsContext } from "../store/cardsContext.jsx";
+import CartModal from "../cart/CartModal.jsx";
+import { CartContext } from "../../store/cartContext.jsx";
 import { NavLink } from "react-router-dom";
-import TopNavbar from "./headersAndNavigation/TopNavbar.jsx";
+import TopNavbar from "./TopNavbar.jsx";
 
 export default function Header() {
   const modal = useRef();
-  const { items } = useContext(CardsContext);
+  const { items } = useContext(CartContext);
 
   const cartQuantity = items.length;
 

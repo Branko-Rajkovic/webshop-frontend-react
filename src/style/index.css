@@ -1,288 +1,114 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Merriweather:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tangerine:wght@400;700&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-  box-sizing: border-box;
+  @apply box-border;
 }
 
 body {
-  margin: 0;
-  font-family: "Merriweather", serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#6b5d4b, #d1b19d);
-  color: #f3e7d4;
-  min-height: 100vh;
+  @apply bg-[linear-gradient(#6b5d4b,_#d1b19d)]  min-h-screen;
 }
 
-#main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 15%;
+.navbar {
+  @apply flex justify-between m-1;
 }
 
-#main-title {
-  display: flex;
-  align-items: center;
+.navbar a {
+  @apply px-4 py-1 m-4 font-semibold rounded-sm hover:bg-[#d1b19d] hover:text-[#6b5d4b] text-amber-200;
 }
 
-#main-title img {
-  width: 5rem;
-  margin-right: 1.5rem;
+.main-header {
+  @apply flex items-center justify-between px-12 py-12;
 }
 
-h1 {
-  font-family: "Tangerine", serif;
-  font-weight: 700;
-  text-align: center;
-  /* text-transform: uppercase; */
-  color: #edbf68;
-  text-shadow: 0 0 4px rgba(35, 34, 34, 0.4);
-  font-size: 4.5rem;
-  margin: 0;
+.main-title {
+  @apply flex items-center justify-between w-3/4 font-["Tangerine",_serif] font-bold text-center text-[4.5rem] text-amber-200;
 }
 
-#main-header button {
-  background: #edbf68;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1.5rem;
-  color: #201e1a;
-  font-size: 1.25rem;
-  cursor: pointer;
+.main-title img {
+  @apply mr-6 w-28;
 }
 
-#main-header button:hover {
-  background: #f5b744;
+.main-header button {
+  @apply px-4 py-1 mr-4 text-lg border-none rounded-md cursor-pointer bg-amber-200 text-amber-950 hover:bg-amber-400 hover:text-slate-50;
 }
 
-#shop {
-  width: 70%;
-  margin: 2rem auto;
+.shop {
+  @apply w-3/4 mx-auto my-8;
 }
 
-#shop h2 {
-  font-size: 1.5rem;
-  color: #a59b8b;
-  text-transform: uppercase;
+.shop h2 {
+  @apply text-[1.5rem] text-slate-400 uppercase;
 }
 
-#products {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 2rem;
+.products {
+  @apply p-0 grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))] gap-8;
 }
 
 .product {
-  height: 100%;
-  background: #543e35;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  @apply h-full bg-[#543e35] rounded-lg flex flex-col shadow-lg shadow-slate-800;
 }
 
 .product img {
-  width: 100%;
-  border-radius: 6px;
+  @apply w-full rounded-t-md;
 }
 
 .product-content {
-  flex: 1;
-  padding: 0 1rem 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @apply flex flex-col justify-between h-full px-4 py-2 text-amber-100;
 }
 
 .product-content h3 {
-  font-size: 1.25rem;
-  color: #fbd392;
-  margin-bottom: 0.15rem;
+  @apply mb-2 text-xl text-amber-200;
 }
 
 .product-price {
-  font-size: 1rem;
-  color: #d1b68b;
-  margin: 0;
+  @apply text-xl text-amber-300 font-["Merriweather",_serif] antialiased;
 }
 
 .product-actions {
-  text-align: right;
+  @apply flex w-full place-content-end;
 }
 
 .product-actions button {
-  background: #f4b115;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  color: #201e1a;
-  font-size: 1rem;
-  cursor: pointer;
+  @apply px-4 py-2 mt-2 text-sm font-semibold border-none rounded-lg cursor-pointer bg-amber-400 text-slate-800 hover:bg-amber-500 hover:text-slate-100;
 }
 
-.product-actions button:hover {
-  background: #f5b744;
+.modal {
+  @apply w-1/3 p-2 border-none rounded-md shadow-md bg-slate-200 shadow-slate-800;
 }
 
-#modal {
-  width: 30%;
-  background: #d3b17b;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: fade-slide-in-from-top 0.3s ease-in-out;
+.modal h2 {
+  @apply m-2 text-xl font-semibold uppercase text-slate-800;
 }
 
-#modal::backdrop {
-  background: rgba(0, 0, 0, 0.65);
+.cart-items {
+  @apply flex flex-col gap-2 mx-2 my-4;
 }
 
-#modal h2 {
-  font-size: 1.5rem;
-  color: #4f3807;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-#cart-items {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-#cart-items li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: #fbd392;
-  border-radius: 5px;
-  font-size: 0.9rem;
+.cart-items li {
+  @apply flex items-center justify-between px-4 py-2 text-sm font-semibold bg-orange-200 rounded-sm;
 }
 
 .cart-item-actions {
-  font-size: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  @apply flex items-center gap-2 text-sm font-semibold;
 }
 
-.cart-item-actions button {
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  color: #201e1a;
-  cursor: pointer;
-  font-size: 1.1rem;
+.cart-total-price {
+  @apply text-right;
 }
 
-.cart-item-actions button:hover {
-  background: #f5b744;
+.modal form {
+  @apply flex items-center justify-end gap-4 text-sm font-semibold;
 }
 
-.cart-item-actions button:first-of-type {
-  padding-bottom: 0.2rem;
+.modal button {
+  @apply px-4 py-1 m-2 border-none rounded-sm cursor-pointer bg-amber-900 text-slate-200 hover:bg-slate-200 hover:text-amber-900;
 }
 
-#cart-total-price {
-  text-align: right;
-}
-
-#modal form {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#modal form button {
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  color: #201e1a;
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-
-#modal form button:hover {
-  color: #453719;
-}
-
-/* #modal form button:last-of-type {
-  background: #271e07;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  color: #f9efda;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#modal form button:last-of-type:hover {
-  background: #382e1b;
-} */
-
-#modal form a:last-of-type {
-  background: #271e07;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  color: #f9efda;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#modal form a:last-of-type:hover {
-  background: #382e1b;
-}
-
-#checkout {
-  animation: fade-slide-in-from-right 0.3s ease-in-out;
-}
-
-#checkout label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-#checkout input {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 1rem;
-}
-
-.checkout {
-  display: flex;
-}
-
-@keyframes fade-slide-in-from-top {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-slide-in-from-right {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.modal form a {
+  @apply bg-green-400 border-none rounded-[5px] px-4 py-2 text-slate-100 cursor-pointer hover:bg-slate-200 hover:text-amber-900;
 }
