@@ -33,7 +33,7 @@ export default function Header() {
         <TopNavbar />
         <div className="main-header">
           <div className="main-title">
-            <img src="logo.gif" alt="logo" />
+            <img src="/logo.gif" alt="logo" />
             <h1>Demo-Page.com</h1>
           </div>
           <p>

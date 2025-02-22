@@ -4,7 +4,7 @@ import Product from "../components/Product.jsx";
 import { motion } from "framer-motion";
 import useFetchData from "../hooks/useFetchData.js";
 
-export default function Home() {
+export default function AllProducts() {
   const { data, error } = useFetchData("https://fakestoreapi.com/products/");
   return (
     <motion.div

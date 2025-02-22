@@ -11,6 +11,7 @@ import AdminItems from "./pages/AdminItems";
 import AdminUsers from "./pages/AdminUsers";
 import ProductPage from "./pages/ProductPage";
 import AllProducts from "./pages/AllProducts";
+import Category from "./pages/Category";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
@@ -29,6 +30,7 @@ export default function AnimatedRoutes() {
 
           <Route index element={<Home />} />
           <Route path="/:id" element={<ProductPage />} />
+          <Route path="/category/:category" element={<Category />} />
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>

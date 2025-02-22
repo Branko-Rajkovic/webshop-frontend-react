@@ -1,6 +1,13 @@
+import { NavLink } from "react-router-dom";
+
 function Error() {
   return (
-    <div className="flex items-center h-auto">
+    <div className="flex flex-col items-center h-screen">
+      <img
+        src="/images/error.png"
+        alt="error-image"
+        className="m-8 border-2 rounded-full w-96"
+      />
       <p className="m-8 text-4xl text-slate-100">
         <span>💥</span> Something went wrong!
       </p>

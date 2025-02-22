@@ -116,3 +116,27 @@ body {
 .modal form a {
   @apply bg-green-400 border-none rounded-[5px] px-4 py-2 text-slate-100 cursor-pointer hover:bg-slate-200 hover:text-amber-900;
 }
+
+.footer {
+  @apply mt-4 shadow bg-slate-100 dark:bg-slate-800;
+}
+
+.footer div {
+  @apply w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between;
+}
+
+.footer ul {
+  @apply flex flex-wrap items-center mt-3 text-sm font-medium text-slate-500 dark:text-slate-400 sm:mt-0;
+}
+
+.copyright {
+  @apply text-sm text-slate-500 sm:text-center dark:text-slate-400;
+}
+
+.link {
+  @apply underline underline-offset-4 text-sky-50;
+}
+
+.link-small {
+  @apply hover:underline me-4 md:me-6;
+}
