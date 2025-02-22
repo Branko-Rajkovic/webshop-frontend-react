@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../store/cartContext";
+import { NavLink } from "react-router-dom";
 
 export default function Product({ id, image, title, price, description }) {
   const { addItemToCart } = useContext(CartContext);
@@ -12,7 +13,9 @@ export default function Product({ id, image, title, price, description }) {
           <p className="product-price">${price}</p>
         </div>
         <p>{description}</p>
+
         <p className="product-actions">
+          <NavLink to={`/${id}`}>Details</NavLink>
           <button
             onClick={() =>
               addItemToCart({ id, image, title, price, description })

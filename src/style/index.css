@@ -70,7 +70,11 @@ body {
 }
 
 .product-actions {
-  @apply flex w-full place-content-end;
+  @apply flex justify-between w-full;
+}
+
+.product-actions a {
+  @apply px-4 py-1 max-h-fit rounded-md bg-[#6b5d4b] text-[#d1b19d] font-semibold hover:bg-[#d1b19d] hover:text-[#6b5d4b];
 }
 
 .product-actions button {
