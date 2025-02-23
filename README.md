@@ -65,10 +65,10 @@ The build output will be located in the `dist` directory.
 - `src/`: Contains the source code of the application.
   - `components/`: Reusable React components.
   - `pages/`: Page components corresponding to different routes.
+  - `hooks/`: Custom hooks
+  - `style/`: index.css, CSS (Tailwind CSS) stylesheet
+  - `store/`: Context with State
 - `public/`: Public assets that are served directly.
-- `hooks/`: Custom hooks
-- `store/`: Context with State
-- `style/`: index.css, CSS (Tailwind CSS) stylesheet
 - `tailwind.config.js`: Configuration file for Tailwind CSS.
 - `vite.config.js`: Configuration file for Vite.
 
